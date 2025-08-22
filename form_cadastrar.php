@@ -1,18 +1,20 @@
 <?php
-    include "cabecalho.php"
+    include "cabecalho.php";
 ?>
 <body>
     <div class="container">
-        <form>
+        <h2>CADASTRO DE PRODUTOS</h2>
+        <form action = "inserir.php" method="POST">
             <div class="mb-3">
                 <input type="text" name="produto" class="form-control" placeholder="Digite o nome do produto">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Digite o preço do produto">
+                <input type="text" name ="preco" class="form-control" placeholder="Digite o preço do produto">
             </div>
             <div class="mb-3">
-                <input type="text" name="produto" class="form-control" placeholder="Digite a quantidade do produto">
+                <input type="text" name="estoque" class="form-control" placeholder="Digite a quantidade do produto">
             </div>
+            <button type="submit" class="btn btn-primary btn-lg shadow rounded-pill">Enviar</button>
         </form>
         <a href = "index.php"type="button" class="btn btn-danger">voltar</a>
     </div>
