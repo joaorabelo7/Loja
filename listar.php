@@ -1,11 +1,9 @@
 <?php
-    include "cabecalho.php"
+    include 'cabecalho.php';
 ?>
-<Body>
+<body>    
     <div class="container">
-        <h1>
-            Sistema CRUD
-        </h1>
+        <h2>LISTAGEM DE PRODUTOS</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -24,25 +22,24 @@
                 $stmt = $pdo->query($sql);
                 while ($produto = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
-                    echo "<td>".$produto["id"]."<td/>";
-                    echo "<td>".$produto["nome"]."<td/>";
-                    echo "<td>".$produto["preco"]."<td/>";
-                    echo "<td>".$produto["quantidade"]."<td/>";
+                    echo "<td>".$produto['id']."</td>";
+                    echo "<td>".$produto['nome']."</td>";
+                    echo "<td>".$produto['preco']."</td>";
+                    echo "<td>".$produto['quantidade']."</td>";
                     echo "
                     <td>
-                         <div class='btn-group' role='group'>
-                            <a href = '#'type='button' class='btn btn-warning'>Atualizar</a>
-                            <a href = '#'type='button' class='btn btn-danger'>Apagar</a>
+                        <div class='btn-group' role='group'>
+                            <a href='form_atualizar.php?id=".$produto['id']."' type='button' class='btn btn-primary'>Atualizar</a>
+                            <a href='#' type='button' class='btn btn-danger'>Apagar</a>
                         </div>
-                    <td/>
+                    </td>
                     ";
-                    echo "</tr>";
+                    echo "</tr>";                                        
                 }
-            ?>
-                
+                ?>                                
             </tbody>
         </table>
-        <a href = "index.php"type="button" class="btn btn-danger">voltar</a>
-
+        <a href='index.php' type='button' class='btn btn-danger'>Voltar</a>
     </div>
-</Body>
+</body>
+</html>

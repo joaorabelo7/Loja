@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `produtos`
 --
 
+CREATE DATABASE loja;
+USE loja;
+
 CREATE TABLE `produtos` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
